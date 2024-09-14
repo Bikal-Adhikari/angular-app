@@ -6,17 +6,10 @@
     </menu>
   </header>
   <ul>
+    @for (task of SelectedUserTasks; track task.id){
     <li>
-      <app-task />
+      <app-task [task]="task" (complete)="onCompleteTask($event)" />
     </li>
-    <li>
-      <app-task />
-    </li>
-    <li>
-      <app-task />
-    </li>
-    <li>
-      <app-task />
-    </li>
+    }
   </ul>
 </section>
